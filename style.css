@@ -1,0 +1,122 @@
+main {
+  background-image: url(img/istockphoto-1065706754-612x612.jpg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+.layer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+.layer-txt{
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  color: rgb(33, 29, 29);
+  letter-spacing: 0.4rem;
+  padding: 12rem 0;
+}
+ 
+#head {
+  animation: poyopoyo 2s ease-out infinite;
+  opacity: 1;
+}
+
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.95);
+  }
+}
+
+#sub {
+  background: linear-gradient(transparent 60%, rgb(237, 176, 21) 50%);
+}
+
+/*----------------------------
+* メニュー開閉ボタン
+*----------------------------*/
+.menu-btn{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(237, 210, 59);
+  color: black;
+}
+
+/*----------------------------
+* メニュー本体
+*----------------------------*/
+.menu{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #555;
+}
+#item{
+  width: 100%;
+  height: auto;
+  padding: .5em 1em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/*----------------------------
+* アニメーション部分
+*----------------------------*/
+
+/* アニメーション前のメニューの状態 */
+.menu{
+  transform-origin: top left;
+  transform: rotateZ(-90deg);
+  transition: all .3s ease;
+}
+/* アニメーション後のメニューの状態 */
+.menu.is-active{
+  transform: rotateZ(0deg);
+}
+
+@media (max-width: 768px) {
+  #head {
+    display: block;
+    margin: auto;
+  }
+
+  main {
+    background-image: url(img/istockphoto-1065706754-612x612.jpg);
+    background-position: center;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+  }
+
+  .layer-txt{
+    font-size: 2rem;
+    padding: 8rem 0;
+    color: black;
+  }
+  
+
+  #btn {
+    text-align: center;
+  }
+}
